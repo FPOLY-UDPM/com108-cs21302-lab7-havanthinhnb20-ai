@@ -1,7 +1,7 @@
 /******************************************************************************
- * Họ và tên: [ĐIỀN TÊN TẠI ĐÂY]
- * MSSV:      [ĐIỀN MSSV TẠI ĐÂY]
- * Lớp:       [ĐIỀN LỚP TẠI ĐÂY]
+ * Họ và tên: [Hà Văn Thịnh]
+ * MSSV:      [PS49131]
+ * Lớp:       [CS21301]
  *****************************************************************************/
 
 //  BÀI 1: XÂY DỰNG CHƯƠNG TRÌNH ĐẾM NGUYÊN ÂM VÀ PHỤ ÂM CỦA 1 CHUỖI 
@@ -12,3 +12,45 @@
 
 // VIẾT CODE Ở ĐÂY
 
+#include <stdio.h>
+#include <string.h>
+
+int main()
+{
+    char tiepTuc;
+    do
+    {
+        char chuoi[100];
+        int phuAm = 0, nguyenAm = 0;
+
+        printf("Ban hay nhap vao chuoi ky tu can kiem tra: \n");
+        fgets(chuoi, sizeof(chuoi), stdin);
+
+        for (int i = 0; i < strlen(chuoi); i++)
+        {
+            if (chuoi[i] == 'a' || chuoi[i] == 'e' || chuoi[i] == 'u' ||
+                chuoi[i] == 'i' || chuoi[i] == 'o' || chuoi[i] == 'y' ||
+                chuoi[i] == 'A' || chuoi[i] == 'E' || chuoi[i] == 'U' ||
+                chuoi[i] == 'I' || chuoi[i] == 'O' || chuoi[i] == 'Y')
+            {
+                nguyenAm = nguyenAm + 1;
+            }
+            else if (chuoi[i] == ' ')
+            {
+                continue;
+            }
+            else
+                phuAm = phuAm + 1;
+        }
+
+        printf("Chuoi ban vua nhap co %d ky tu nguyen am\n", nguyenAm);
+        printf("Chuoi ban vua nhap co %d ky tu phu am\n", phuAm);
+
+        printf("Ban co muon tiep tuc khong? (y/n): ");
+        scanf(" %c", &tiepTuc);
+        getchar();
+
+    } while (tiepTuc == 'y' || tiepTuc == 'Y');
+
+    return 0;
+}
